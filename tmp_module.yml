@@ -1,0 +1,7 @@
+---
+- hosts: aws
+  tasks:
+       - name: Create a test template
+         template: src=test dest=/tmp/testfile mode=644
+         sudo: yes
+

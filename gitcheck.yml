@@ -1,0 +1,10 @@
+---
+- hosts: aws
+  tasks:
+    - yum: name=git state=installed
+      sudo: yes
+      when: ansible_os_family == "RedHat"
+
+    - apt: name=git state=latest force=yes
+      sudo: yes
+      when: ansible_os_family == "Debian"

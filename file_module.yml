@@ -1,0 +1,15 @@
+---
+- hosts: amazon
+  tasks:
+       - name: Ensure httpd conf right permissions
+         file: path=/etc/httpd/conf/httpd.conf owner=root group=root mode=0644
+         sudo: yes
+
+       - name: Create a symlink in /tmp for httpd.conf
+         file: src=/etc/httpd/conf/httpd.conf dest=/tmp/httpd.conf owner=root group=root state=link
+         sudo: yes
+
+       - name: Create recursive dir
+         file: path=/tmp/dir1/dir2/dir3 owner=root group=root mode=0777 state=directory
+         sudo: yes
+

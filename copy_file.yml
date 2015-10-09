@@ -1,0 +1,7 @@
+---
+- hosts: aws
+  tasks:
+       - name: Create a file to remote machine
+         copy: src=testfile dest=/tmp/test2.conf owner=root group=root mode=0644
+         sudo: yes
+

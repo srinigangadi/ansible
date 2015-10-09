@@ -1,0 +1,6 @@
+---
+- hosts: aws
+  tasks:
+   - name: Checkout gitignore repo
+     git: repo=https://github.com/github/gitignore.git dest=/opt/gitignore
+     sudo: yes

@@ -1,0 +1,13 @@
+---
+- hosts: ec2*
+  remote_user: ec2-user
+  tasks:
+   
+
+  - name: Stoping httpd service
+    service: name=httpd state=stopped
+    sudo: yes
+
+  - name: Uninstalling httpd package
+    yum: name=httpd state=absent
+    sudo: yes
